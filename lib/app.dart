@@ -12,10 +12,15 @@ class App extends StatelessWidget {
       title: 'SAIP',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepPurple,
+          seedColor: Colors.yellow,
           brightness: Brightness.dark,
         ),
         useMaterial3: true,
+        textTheme: TextTheme(
+          bodyMedium: TextStyle(
+            color: Colors.white,
+          ),
+        ),
       ),
       home: const LoginView(),
     );

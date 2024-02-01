@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:saib_flutter/ui/screen/auth/login/login_controller.dart';
 import 'package:saib_flutter/ui/widget/custom_input_field.dart';
 
 class LoginView extends StatelessWidget {
@@ -7,6 +8,8 @@ class LoginView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final LoginController c = Get.put(LoginController());
+
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -51,6 +54,22 @@ class LoginView extends StatelessWidget {
                         label: 'Password',
                         supportObscure: true,
                       ),
+                      const SizedBox(height: 8),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Obx(
+                            () => Checkbox(
+                              tristate: false,
+                              value: c.isRememberMeChecked.value,
+                              onChanged: (value) {
+                                c.isRememberMeChecked.value = value!;
+                              },
+                            ),
+                          ),
+                          const Text('Remember Me')
+                        ],
+                      )
                     ],
                   ),
                 ],
