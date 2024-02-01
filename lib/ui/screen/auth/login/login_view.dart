@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:saib_flutter/ui/widget/custom_input_field.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -37,12 +38,20 @@ class LoginView extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Padding(
+                  ListView(
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
                     padding: const EdgeInsets.symmetric(horizontal: 72.0),
-                    child: Image.asset(
-                      'assets/images/logo_saib.png',
-                      width: 400,
-                    ),
+                    children: [
+                      Image.asset('assets/images/logo_saib.png', width: 400),
+                      const SizedBox(height: 16),
+                      const CustomInputField(label: 'User Name'),
+                      const SizedBox(height: 8),
+                      const CustomInputField(
+                        label: 'Password',
+                        supportObscure: true,
+                      ),
+                    ],
                   ),
                 ],
               ),
