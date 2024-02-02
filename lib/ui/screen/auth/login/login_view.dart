@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:saib_flutter/ui/screen/auth/login/login_controller.dart';
+import 'package:saib_flutter/ui/widget/custom_button.dart';
 import 'package:saib_flutter/ui/widget/custom_input_field.dart';
 
 class LoginView extends StatelessWidget {
@@ -68,6 +69,36 @@ class LoginView extends StatelessWidget {
                             ),
                           ),
                           const Text('Remember Me')
+                        ],
+                      ),
+                      const SizedBox(height: 8),
+                      CustomButton(
+                        actionText: 'Login',
+                        onTap: () async => c.onLoginTap(),
+                      ),
+                      const SizedBox(height: 8),
+                      TextButton(
+                        onPressed: () {},
+                        child: const Text(
+                          'Forgot Password',
+                          style: TextStyle(
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text('Don\'t have an account?'),
+                          TextButton(
+                            onPressed: () {},
+                            child: const Text(
+                              'Register',
+                              style: TextStyle(
+                                decoration: TextDecoration.underline,
+                              ),
+                            ),
+                          ),
                         ],
                       )
                     ],

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:get/get.dart';
 import 'package:saib_flutter/ui/screen/auth/login/login_view.dart';
 
 class App extends StatelessWidget {
@@ -16,9 +16,27 @@ class App extends StatelessWidget {
           brightness: Brightness.dark,
         ),
         useMaterial3: true,
-        textTheme: TextTheme(
-          bodyMedium: TextStyle(
-            color: Colors.white,
+        textTheme: const TextTheme(bodyMedium: TextStyle(color: Colors.white)),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ButtonStyle(
+            backgroundColor: MaterialStatePropertyAll<Color>(
+              Get.theme.colorScheme.primary,
+            ),
+            foregroundColor: const MaterialStatePropertyAll<Color>(
+              Colors.black,
+            ),
+            fixedSize: const MaterialStatePropertyAll<Size>(
+              Size.fromHeight(
+                60,
+              ),
+            ),
+          ),
+        ),
+        textButtonTheme: const TextButtonThemeData(
+          style: ButtonStyle(
+            foregroundColor: MaterialStatePropertyAll<Color>(
+              Colors.white,
+            ),
           ),
         ),
       ),
