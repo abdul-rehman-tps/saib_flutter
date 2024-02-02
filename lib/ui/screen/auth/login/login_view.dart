@@ -23,25 +23,22 @@ class LoginView extends StatelessWidget {
           child: Stack(
             alignment: Alignment.topCenter,
             children: [
-              Positioned(child: Image.asset('assets/images/map_dots.png')),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
+              Positioned(
+                child: Image.asset('assets/images/map_dots.png'),
+                width: Get.mediaQuery.size.width,
+              ),
+              Image.asset('assets/images/line.png'),
+              Positioned(
+                left: Get.mediaQuery.size.width * 0.28,
+                child: Image.asset(
+                  'assets/icons/ic_plane.png',
+                  width: 80,
+                  height: 80,
+                ),
+              ),
+              ListView(
                 children: [
-                  const SizedBox(height: 20),
-                  Stack(
-                    alignment: Alignment.topCenter,
-                    children: [
-                      Image.asset('assets/images/line.png'),
-                      Positioned(
-                        left: Get.mediaQuery.size.width * 0.28,
-                        child: Image.asset(
-                          'assets/icons/ic_plane.png',
-                          width: 80,
-                          height: 80,
-                        ),
-                      ),
-                    ],
-                  ),
+                  SizedBox(height: Get.mediaQuery.size.height * 0.16),
                   ListView(
                     physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
@@ -103,6 +100,34 @@ class LoginView extends StatelessWidget {
                       )
                     ],
                   ),
+                  SizedBox(height: Get.mediaQuery.size.height * 0.16),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      IconButton(
+                        icon: Image.asset(
+                          'assets/icons/ic_aboutus.png',
+                          width: 40,
+                        ),
+                        onPressed: () {},
+                      ),
+                      IconButton(
+                        icon: Image.asset(
+                          'assets/icons/ic_locator.png',
+                          width: 40,
+                        ),
+                        onPressed: () {},
+                      ),
+                      IconButton(
+                        icon: Image.asset(
+                          'assets/icons/ic_phone.png',
+                          width: 40,
+                        ),
+                        onPressed: () {},
+                      ),
+                    ],
+                  )
                 ],
               ),
             ],
