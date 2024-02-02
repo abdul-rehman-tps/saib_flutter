@@ -24,8 +24,11 @@ class LoginView extends StatelessWidget {
             alignment: Alignment.topCenter,
             children: [
               Positioned(
-                child: Image.asset('assets/images/map_dots.png'),
                 width: Get.mediaQuery.size.width,
+                child: Image.asset(
+                  'assets/images/map_dots.png',
+                  fit: BoxFit.cover,
+                ),
               ),
               Image.asset('assets/images/line.png'),
               Positioned(

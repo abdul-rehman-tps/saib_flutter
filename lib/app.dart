@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:saib_flutter/ui/screen/auth/login/login_view.dart';
+import 'package:saib_flutter/ui/screen/auth/landing/landing_view.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -25,22 +25,17 @@ class App extends StatelessWidget {
             foregroundColor: const MaterialStatePropertyAll<Color>(
               Colors.black,
             ),
-            fixedSize: const MaterialStatePropertyAll<Size>(
-              Size.fromHeight(
-                60,
-              ),
-            ),
+            fixedSize:
+                const MaterialStatePropertyAll<Size>(Size.fromHeight(60)),
           ),
         ),
         textButtonTheme: const TextButtonThemeData(
           style: ButtonStyle(
-            foregroundColor: MaterialStatePropertyAll<Color>(
-              Colors.white,
-            ),
+            foregroundColor: MaterialStatePropertyAll<Color>(Colors.white),
           ),
         ),
       ),
-      home: const LoginView(),
+      home: const LandingView(),
     );
   }
 }

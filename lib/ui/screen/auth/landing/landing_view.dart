@@ -1,66 +1,128 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:saib_flutter/ui/screen/auth/landing/landing_controller.dart';
+import 'package:saib_flutter/ui/widget/custom_button.dart';
 
-class HomeView extends StatefulWidget {
-  const HomeView({super.key, required this.title});
-
-  final String title;
+class LandingView extends StatefulWidget {
+  const LandingView({super.key});
 
   @override
-  State<HomeView> createState() => _HomeViewState();
+  State<LandingView> createState() => _LandingViewState();
 }
 
-class _HomeViewState extends State<HomeView> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
+class _LandingViewState extends State<LandingView> {
   @override
   Widget build(BuildContext context) {
+    final LandingController c = Get.put(LandingController());
+
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/bg_landing.png'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: SafeArea(
+          child: Stack(
+            alignment: Alignment.topCenter,
+            children: [
+              Positioned(
+                width: Get.mediaQuery.size.width,
+                child: Image.asset(
+                  'assets/images/map_dots.png',
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Image.asset('assets/images/line.png'),
+              Positioned(
+                left: Get.mediaQuery.size.width * 0.28,
+                child: Image.asset(
+                  'assets/icons/ic_plane.png',
+                  width: 80,
+                  height: 80,
+                ),
+              ),
+              ListView(
+                children: [
+                  SizedBox(height: Get.mediaQuery.size.height * 0.25),
+                  Padding(
+                    padding: const EdgeInsets.all(36.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Image.asset('assets/images/logo_saib.png', width: 250),
+                        const SizedBox(height: 32),
+                        const Text('Welcome', textAlign: TextAlign.center),
+                        const SizedBox(height: 32),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            IconButton(
+                              icon: Column(
+                                children: [
+                                  Image.asset(
+                                    'assets/icons/ic_aboutus.png',
+                                    width: 40,
+                                  ),
+                                  const Text('About Us'),
+                                ],
+                              ),
+                              onPressed: () {},
+                            ),
+                            IconButton(
+                              icon: Column(
+                                children: [
+                                  Image.asset(
+                                    'assets/icons/ic_locator.png',
+                                    width: 40,
+                                  ),
+                                  const Text('ATM Locator'),
+                                ],
+                              ),
+                              onPressed: () {},
+                            ),
+                            IconButton(
+                              icon: Column(
+                                children: [
+                                  Image.asset(
+                                    'assets/icons/ic_phone.png',
+                                    width: 40,
+                                  ),
+                                  const Text('Contact Us'),
+                                ],
+                              ),
+                              onPressed: () {},
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 64),
+                        SizedBox(
+                          width: 250,
+                          child: CustomButton(
+                            actionText: 'Login',
+                            onTap: () async => c.onLoginTap(),
+                          ),
+                        ),
+                        const SizedBox(height: 16),
+                        SizedBox(
+                          width: 250,
+                          child: CustomButton(
+                            actionText: 'Register',
+                            onTap: () async => c.onRegisterTap(),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
