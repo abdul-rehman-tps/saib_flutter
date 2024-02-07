@@ -25,8 +25,8 @@ class App extends StatelessWidget {
             foregroundColor: const MaterialStatePropertyAll<Color>(
               Colors.black,
             ),
-            fixedSize:
-                const MaterialStatePropertyAll<Size>(Size.fromHeight(60)),
+            fixedSize: MaterialStatePropertyAll<Size>(
+                Size.fromHeight(Get.mediaQuery.size.height * 0.09)),
           ),
         ),
         textButtonTheme: const TextButtonThemeData(

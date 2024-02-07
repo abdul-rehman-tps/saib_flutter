@@ -30,32 +30,40 @@ class LoginView extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              Image.asset('assets/images/line.png'),
               Positioned(
-                left: Get.mediaQuery.size.width * 0.28,
+                top: Get.mediaQuery.size.height * 0.05,
+                width: Get.mediaQuery.size.width,
+                child: Image.asset('assets/images/line.png'),
+              ),
+              Positioned(
+                left: Get.mediaQuery.size.width * 0.30,
+                top: Get.mediaQuery.size.height * 0.055,
                 child: Image.asset(
                   'assets/icons/ic_plane.png',
-                  width: 80,
-                  height: 80,
+                  width: Get.mediaQuery.size.width * 0.15,
+                  height: Get.mediaQuery.size.width * 0.15,
                 ),
               ),
               ListView(
                 children: [
-                  SizedBox(height: Get.mediaQuery.size.height * 0.16),
+                  SizedBox(height: Get.height * 0.23),
                   ListView(
                     physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
-                    padding: const EdgeInsets.symmetric(horizontal: 72.0),
+                    padding: EdgeInsets.symmetric(horizontal: Get.width * 0.17),
                     children: [
-                      Image.asset('assets/images/logo_saib.png', width: 400),
-                      const SizedBox(height: 16),
+                      Image.asset(
+                        'assets/images/logo_saib.png',
+                        width: Get.width * 0.6,
+                      ),
+                      SizedBox(height: Get.height * 0.01),
                       const CustomInputField(label: 'User Name'),
-                      const SizedBox(height: 8),
+                      SizedBox(height: Get.height * 0.01),
                       const CustomInputField(
                         label: 'Password',
                         supportObscure: true,
                       ),
-                      const SizedBox(height: 8),
+                      SizedBox(height: Get.height * 0.01),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -71,7 +79,7 @@ class LoginView extends StatelessWidget {
                           const Text('Remember Me')
                         ],
                       ),
-                      const SizedBox(height: 8),
+                      SizedBox(height: Get.height * 0.01),
                       CustomButton(
                         actionText: 'Login',
                         onTap: () async => c.onLoginTap(),

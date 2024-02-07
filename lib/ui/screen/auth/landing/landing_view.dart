@@ -34,88 +34,93 @@ class _LandingViewState extends State<LandingView> {
                   fit: BoxFit.cover,
                 ),
               ),
-              Image.asset('assets/images/line.png'),
               Positioned(
-                left: Get.mediaQuery.size.width * 0.28,
+                top: Get.mediaQuery.size.height * 0.12,
+                width: Get.mediaQuery.size.width,
+                child: Image.asset('assets/images/line.png'),
+              ),
+              Positioned(
+                left: Get.mediaQuery.size.width * 0.30,
+                top: Get.mediaQuery.size.height * 0.125,
                 child: Image.asset(
                   'assets/icons/ic_plane.png',
-                  width: 80,
-                  height: 80,
+                  width: Get.mediaQuery.size.width * 0.15,
+                  height: Get.mediaQuery.size.width * 0.15,
                 ),
               ),
               ListView(
                 children: [
-                  SizedBox(height: Get.mediaQuery.size.height * 0.25),
-                  Padding(
-                    padding: const EdgeInsets.all(36.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Image.asset('assets/images/logo_saib.png', width: 250),
-                        const SizedBox(height: 32),
-                        const Text('Welcome', textAlign: TextAlign.center),
-                        const SizedBox(height: 32),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            IconButton(
-                              icon: Column(
-                                children: [
-                                  Image.asset(
-                                    'assets/icons/ic_aboutus.png',
-                                    width: 40,
-                                  ),
-                                  const Text('About Us'),
-                                ],
-                              ),
-                              onPressed: () {},
+                  SizedBox(height: Get.mediaQuery.size.height * 0.33),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image.asset(
+                        'assets/images/logo_saib.png',
+                        width: Get.mediaQuery.size.width * 0.6,
+                      ),
+                      SizedBox(height: Get.mediaQuery.size.height * 0.03),
+                      const Text('Welcome', textAlign: TextAlign.center),
+                      SizedBox(height: Get.mediaQuery.size.height * 0.03),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          IconButton(
+                            icon: Column(
+                              children: [
+                                Image.asset(
+                                  'assets/icons/ic_aboutus.png',
+                                  width: Get.mediaQuery.size.width * 0.09,
+                                ),
+                                const Text('About Us'),
+                              ],
                             ),
-                            IconButton(
-                              icon: Column(
-                                children: [
-                                  Image.asset(
-                                    'assets/icons/ic_locator.png',
-                                    width: 40,
-                                  ),
-                                  const Text('ATM Locator'),
-                                ],
-                              ),
-                              onPressed: () {},
-                            ),
-                            IconButton(
-                              icon: Column(
-                                children: [
-                                  Image.asset(
-                                    'assets/icons/ic_phone.png',
-                                    width: 40,
-                                  ),
-                                  const Text('Contact Us'),
-                                ],
-                              ),
-                              onPressed: () {},
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 64),
-                        SizedBox(
-                          width: 250,
-                          child: CustomButton(
-                            actionText: 'Login',
-                            onTap: () async => c.onLoginTap(),
+                            onPressed: () {},
                           ),
-                        ),
-                        const SizedBox(height: 16),
-                        SizedBox(
-                          width: 250,
-                          child: CustomButton(
-                            actionText: 'Register',
-                            onTap: () async => c.onRegisterTap(),
+                          IconButton(
+                            icon: Column(
+                              children: [
+                                Image.asset(
+                                  'assets/icons/ic_locator.png',
+                                  width: Get.mediaQuery.size.width * 0.09,
+                                ),
+                                const Text('ATM Locator'),
+                              ],
+                            ),
+                            onPressed: () {},
                           ),
+                          IconButton(
+                            icon: Column(
+                              children: [
+                                Image.asset(
+                                  'assets/icons/ic_phone.png',
+                                  width: Get.mediaQuery.size.width * 0.09,
+                                ),
+                                const Text('Contact Us'),
+                              ],
+                            ),
+                            onPressed: () {},
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: Get.mediaQuery.size.height * 0.06),
+                      SizedBox(
+                        width: Get.mediaQuery.size.width * 0.65,
+                        child: CustomButton(
+                          actionText: 'Login',
+                          onTap: () async => c.onLoginTap(),
                         ),
-                      ],
-                    ),
+                      ),
+                      SizedBox(height: Get.mediaQuery.size.height * 0.03),
+                      SizedBox(
+                        width: Get.mediaQuery.size.width * 0.65,
+                        child: CustomButton(
+                          actionText: 'Register',
+                          onTap: () async => c.onRegisterTap(),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
