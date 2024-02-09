@@ -44,67 +44,69 @@ class LoginView extends StatelessWidget {
                   height: Get.mediaQuery.size.width * 0.15,
                 ),
               ),
-              ListView(
+              Column(
                 children: [
-                  SizedBox(height: Get.height * 0.23),
-                  ListView(
-                    physics: const NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    padding: EdgeInsets.symmetric(horizontal: Get.width * 0.17),
-                    children: [
-                      Image.asset(
-                        'assets/images/logo_saib.png',
-                        width: Get.width * 0.6,
-                      ),
-                      const CustomInputField(label: 'User Name'),
-                      const CustomInputField(
-                        label: 'Password',
-                        supportObscure: true,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Obx(
-                            () => Checkbox(
-                              tristate: false,
-                              value: c.isRememberMeChecked.value,
-                              onChanged: (value) {
-                                c.isRememberMeChecked.value = value!;
-                              },
-                            ),
-                          ),
-                          const Text('Remember Me')
-                        ],
-                      ),
-                      CustomButton(
-                        actionText: 'Login',
-                        onTap: () async => c.onLoginTap(),
-                      ),
-                      TextButton(
-                        onPressed: () {},
-                        child: const Text(
-                          'Forgot Password',
-                          style: TextStyle(
-                            decoration: TextDecoration.underline,
-                          ),
+                  Expanded(
+                    child: ListView(
+                      shrinkWrap: true,
+                      padding:
+                          EdgeInsets.symmetric(horizontal: Get.width * 0.17),
+                      children: [
+                        SizedBox(height: Get.height * 0.23),
+                        Image.asset(
+                          'assets/images/logo_saib.png',
+                          width: Get.width * 0.6,
                         ),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text('Don\'t have an account?'),
-                          TextButton(
-                            onPressed: () {},
-                            child: const Text(
-                              'Register',
-                              style: TextStyle(
-                                decoration: TextDecoration.underline,
+                        const CustomInputField(label: 'User Name'),
+                        const CustomInputField(
+                          label: 'Password',
+                          supportObscure: true,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Obx(
+                              () => Checkbox(
+                                tristate: false,
+                                value: c.isRememberMeChecked.value,
+                                onChanged: (value) {
+                                  c.isRememberMeChecked.value = value!;
+                                },
                               ),
                             ),
+                            const Text('Remember Me')
+                          ],
+                        ),
+                        CustomButton(
+                          actionText: 'Login',
+                          onTap: () async => c.onLoginTap(),
+                        ),
+                        TextButton(
+                          onPressed: () {},
+                          child: const Text(
+                            'Forgot Password',
+                            style: TextStyle(
+                              decoration: TextDecoration.underline,
+                            ),
                           ),
-                        ],
-                      )
-                    ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text('Don\'t have an account?'),
+                            TextButton(
+                              onPressed: () {},
+                              child: const Text(
+                                'Register',
+                                style: TextStyle(
+                                  decoration: TextDecoration.underline,
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,

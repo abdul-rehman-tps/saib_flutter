@@ -19,8 +19,8 @@ class App extends StatelessWidget {
         textTheme: const TextTheme(bodyMedium: TextStyle(color: Colors.white)),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ButtonStyle(
-            backgroundColor: MaterialStatePropertyAll<Color>(
-              Get.theme.colorScheme.primary,
+            backgroundColor: const MaterialStatePropertyAll<Color>(
+              Colors.yellow,
             ),
             foregroundColor: const MaterialStatePropertyAll<Color>(
               Colors.black,
