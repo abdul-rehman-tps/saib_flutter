@@ -26,7 +26,8 @@ class App extends StatelessWidget {
               Colors.black,
             ),
             fixedSize: MaterialStatePropertyAll<Size>(
-                Size.fromHeight(Get.mediaQuery.size.height * 0.09)),
+              Size.fromHeight(MediaQuery.of(context).size.height * 0.06),
+            ),
           ),
         ),
         textButtonTheme: const TextButtonThemeData(

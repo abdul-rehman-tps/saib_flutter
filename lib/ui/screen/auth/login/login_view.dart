@@ -56,14 +56,11 @@ class LoginView extends StatelessWidget {
                         'assets/images/logo_saib.png',
                         width: Get.width * 0.6,
                       ),
-                      SizedBox(height: Get.height * 0.01),
                       const CustomInputField(label: 'User Name'),
-                      SizedBox(height: Get.height * 0.01),
                       const CustomInputField(
                         label: 'Password',
                         supportObscure: true,
                       ),
-                      SizedBox(height: Get.height * 0.01),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -79,12 +76,10 @@ class LoginView extends StatelessWidget {
                           const Text('Remember Me')
                         ],
                       ),
-                      SizedBox(height: Get.height * 0.01),
                       CustomButton(
                         actionText: 'Login',
                         onTap: () async => c.onLoginTap(),
                       ),
-                      const SizedBox(height: 8),
                       TextButton(
                         onPressed: () {},
                         child: const Text(
@@ -111,7 +106,6 @@ class LoginView extends StatelessWidget {
                       )
                     ],
                   ),
-                  SizedBox(height: Get.mediaQuery.size.height * 0.16),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     mainAxisSize: MainAxisSize.max,
@@ -119,21 +113,21 @@ class LoginView extends StatelessWidget {
                       IconButton(
                         icon: Image.asset(
                           'assets/icons/ic_aboutus.png',
-                          width: 40,
+                          width: Get.width * 0.1,
                         ),
                         onPressed: () {},
                       ),
                       IconButton(
                         icon: Image.asset(
                           'assets/icons/ic_locator.png',
-                          width: 40,
+                          width: Get.width * 0.1,
                         ),
                         onPressed: () {},
                       ),
                       IconButton(
                         icon: Image.asset(
                           'assets/icons/ic_phone.png',
-                          width: 40,
+                          width: Get.width * 0.1,
                         ),
                         onPressed: () {},
                       ),
